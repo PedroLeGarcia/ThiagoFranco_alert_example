@@ -8,7 +8,7 @@ window.onload = function (){
     });
 
 
-document.querySelector("#alerta2").addEventListener("click", function(){
+    document.querySelector("#alerta2").addEventListener("click", function(){
     function retorno(buttonIndex){
         if(buttonIndex == 1){
             navigator.app.exitApp();
@@ -17,5 +17,12 @@ document.querySelector("#alerta2").addEventListener("click", function(){
         }
     }
         navigator.notification.confirm("Fechas com o comando vermelho?", retorno, "Fechar app", ["sim, sempre","não, eca"]);
+    });
+
+    document.querySelector("#beep").addEventListener("click", function(){
+        navigator.notification.beep("3");
+    });
+    document.querySelector("#vibrar").addEventListener("click", function(){
+        navigator.vibrate("10000");
     });
 }
